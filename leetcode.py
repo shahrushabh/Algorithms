@@ -1,15 +1,39 @@
 """ LEETCODE PROBLEMS """
 import math
 
-"""
-    5. TOPTAL QUESTIONS
-"""
-
 
 """
-    4. NUMBER OF DIGIT ONE
+    4. ZIGZAG CONVERSION
 """
+s = "ABCDE"
+w, numRows = 0, 4
+converted_text = [[0 for x in range(w)] for y in range(numRows)]
+row, col = 0, 0
+for index, c in enumerate(s):
+    if((col%2) != 0):
+        converted_text[row].append("")
+        row += 1
+        if(row >= (numRows - 1)):
+            row = 0
+            col += 1
+        converted_text[row].append(c)
+    else:
+        converted_text[row].append(c)
+    if(row == (numRows - 1)):
+        row = 0
+        col += 1
+    else:
+        row += 1
 
+print(converted_text)
+# Combine the lists together to compute the final string.
+str_to_return = ""
+for slist in converted_text:
+    for c in slist:
+        if(c != ""):
+            str_to_return += c
+
+print(str_to_return)
 
 """
     3. MEDIAN OF THE TWO SORTED ARRAYS
