@@ -5,15 +5,16 @@ import math
 """
     4. ZIGZAG CONVERSION
 """
-s = "ABCDE"
-w, numRows = 0, 4
+s = "PAYPALISHIRING"
+# s = "ABCDE"
+w, numRows = 0, 3
 converted_text = [[0 for x in range(w)] for y in range(numRows)]
 row, col = 0, 0
 for index, c in enumerate(s):
     if((col%2) != 0):
         converted_text[row].append("")
         row += 1
-        if(row >= (numRows - 1)):
+        if(row > (numRows - 1)):
             row = 0
             col += 1
         converted_text[row].append(c)
