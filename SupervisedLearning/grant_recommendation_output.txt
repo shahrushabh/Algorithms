@@ -1,0 +1,94 @@
+Row Data: -----------------------
+     Name OverallGrade Obedient  ResearchScore  ProjectScore Recommend
+0   Henry            A        Y             90            85       Yes
+1    John            C        N             85            51       Yes
+2   David            F        N             10            17        No
+3  Homles            B        Y             75            71        No
+4  Marvin            E        N             20            30        No
+5   Simon            A        Y             92            79       Yes
+6  Robert            B        Y             60            59        No
+7   Trent            C        Y             75            33        No
+----------------------- Training Feature Data: -----------------------
+  OverallGrade Obedient  ResearchScore  ProjectScore
+0            A        Y             90            85
+1            C        N             85            51
+2            F        N             10            17
+3            B        Y             75            71
+4            E        N             20            30
+5            A        Y             92            79
+6            B        Y             60            59
+7            C        Y             75            33
+----------------------- Outcome Label Data: -----------------------
+  Recommend
+0       Yes
+1       Yes
+2        No
+3        No
+4        No
+5       Yes
+6        No
+7        No
+----------------------- Scaled Training Feature Data: -----------------------
+  OverallGrade Obedient  ResearchScore  ProjectScore
+0            A        Y       0.899583      1.376650
+1            C        N       0.730648     -0.091777
+2            F        N      -1.803390     -1.560203
+3            B        Y       0.392776      0.772004
+4            E        N      -1.465519     -0.998746
+5            A        Y       0.967158      1.117516
+6            B        Y      -0.114032      0.253735
+7            C        Y       0.392776     -0.869179
+----------------------- Dummied categorical Training Data: -----------------------
+   ResearchScore  ProjectScore  OverallGrade_A  OverallGrade_B  OverallGrade_C  OverallGrade_E  OverallGrade_F  Obedient_N  Obedient_Y
+0       0.899583      1.376650               1               0               0               0               0           0           1
+1       0.730648     -0.091777               0               0               1               0               0           1           0
+2      -1.803390     -1.560203               0               0               0               0               1           1           0
+3       0.392776      0.772004               0               1               0               0               0           0           1
+4      -1.465519     -0.998746               0               0               0               1               0           1           0
+5       0.967158      1.117516               1               0               0               0               0           0           1
+6      -0.114032      0.253735               0               1               0               0               0           0           1
+7       0.392776     -0.869179               0               0               1               0               0           0           1
+----------------------- Logistic Regression Model : -----------------------
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='warn',
+          n_jobs=None, penalty='l2', random_state=None, solver='warn',
+          tol=0.0001, verbose=0, warm_start=False)
+('Accuracy: ', 100.0, '%')
+Classification Status : 
+              precision    recall  f1-score   support
+
+          No       1.00      1.00      1.00         5
+         Yes       1.00      1.00      1.00         3
+
+   micro avg       1.00      1.00      1.00         8
+   macro avg       1.00      1.00      1.00         8
+weighted avg       1.00      1.00      1.00         8
+
+----------------------- Generated Data: -----------------------
+     Name OverallGrade Obedient ResearchScore ProjectScore
+0  Nathan            F        N            30           20
+1  Thomas            A        Y            80           78
+----------------------- Prediction Feature Data: -----------------------
+  ResearchScore ProjectScore  OverallGrade_A  OverallGrade_F  Obedient_N  Obedient_Y
+0      -1.12765     -1.43064               0               1           1           0
+1      0.561712      1.07433               1               0           0           1
+----------------------- Final Feature Set: -----------------------
+  ResearchScore ProjectScore  OverallGrade_A  OverallGrade_F  Obedient_N  Obedient_Y  OverallGrade_C  OverallGrade_B  OverallGrade_E
+0      -1.12765     -1.43064               0               1           1           0               0               0               0
+1      0.561712      1.07433               1               0           0           1               0               0               0
+----------------------- Predictions on New Set: -----------------------
+     Name OverallGrade Obedient ResearchScore ProjectScore Recommend
+0  Nathan            F        N            30           20        No
+1  Thomas            A        Y            80           78       Yes
+----------------------- Accuracy on predicted labels: -----------------------
+('Accuracy: ', 100.0, '%')
+Classification Status : 
+              precision    recall  f1-score   support
+
+          No       1.00      1.00      1.00         1
+         Yes       1.00      1.00      1.00         1
+
+   micro avg       1.00      1.00      1.00         2
+   macro avg       1.00      1.00      1.00         2
+weighted avg       1.00      1.00      1.00         2
+
